@@ -1,4 +1,7 @@
+// ignore_for_file: duplicate_ignore, sort_child_properties_last
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_iot/views/otp_ui.dart';
 
 class ForgotUI extends StatefulWidget {
   const ForgotUI({super.key});
@@ -12,14 +15,15 @@ class _ForgotUIState extends State<ForgotUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(245, 243, 243, 1),
-      body: Padding(
-        padding: EdgeInsets.only(
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.only(
           top: 100.0,
           left: 40.0,
           right: 40.0,
           bottom: 50.0,
-        ),
-        child: Center(
+          ),
+          child: Center(
           child: Column(
             children: [
               Align(
@@ -29,14 +33,23 @@ class _ForgotUIState extends State<ForgotUI> {
                     Navigator.pop(context);
                   },
                   // ignore: sort_child_properties_last
-                  child: Icon(
-                    Icons.arrow_back_ios_new_sharp,
-                    size: 20.0,
+                  child: Center(
+                    child: Icon(
+                      Icons.arrow_back_ios_new_sharp,
+                      size: 20.0,
+                      color: Colors.black,
+                    ),
                   ),
                   style: OutlinedButton.styleFrom(
                       fixedSize: Size(
-                        65.0,
-                        55.0,
+                        45.0,
+                        50.0,
+                      ),
+                      backgroundColor: Colors.white,
+                      padding: EdgeInsets.zero,
+                      side: BorderSide(
+                        color: Color.fromRGBO(225, 232, 243, 1),
+                        width: 1.5,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
@@ -44,7 +57,7 @@ class _ForgotUIState extends State<ForgotUI> {
                 ),
               ),
               SizedBox(
-                height: 20.0,
+                height: 30.0,
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -94,14 +107,21 @@ class _ForgotUIState extends State<ForgotUI> {
                     horizontal: 15.0,
                   ),
                   filled: true,
-                  fillColor: Colors.grey[205],
+                  fillColor: Color.fromRGBO(226, 226, 226, 1),
                 ),
               ),
               SizedBox(
                 height: 20.0,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OtpUI(),
+                    ),
+                  );
+                },
                 child: Text(
                   'Login',
                   style: TextStyle(
@@ -146,6 +166,7 @@ class _ForgotUIState extends State<ForgotUI> {
                 ],
               ),
             ],
+            ),
           ),
         ),
       ),

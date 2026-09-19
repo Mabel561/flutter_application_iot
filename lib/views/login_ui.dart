@@ -1,3 +1,5 @@
+// ignore_for_file: duplicate_ignore, unused_import, sort_child_properties_last
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_iot/views/forgot_ui.dart';
@@ -15,14 +17,15 @@ class _LoginUIState extends State<LoginUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(245, 243, 243, 1),
-      body: Padding(
-        padding: EdgeInsets.only(
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.only(
           top: 100.0,
           left: 40.0,
           right: 40.0,
           bottom: 50.0,
-        ),
-        child: Center(
+          ),
+          child: Center(
           child: Column(
             children: [
               Align(
@@ -32,19 +35,31 @@ class _LoginUIState extends State<LoginUI> {
                     Navigator.pop(context);
                   },
                   // ignore: sort_child_properties_last
-                  child: Icon(
-                    Icons.arrow_back_ios_new_sharp,
-                    size: 20.0,
+                  child: Center(
+                    child: Icon(
+                      Icons.arrow_back_ios_new_sharp,
+                      size: 20.0,
+                      color: Colors.black,
+                    ),
                   ),
                   style: OutlinedButton.styleFrom(
                       fixedSize: Size(
-                        65.0,
-                        55.0,
+                        45.0,
+                        50.0,
+                      ),
+                      backgroundColor: Colors.white,
+                      padding: EdgeInsets.zero,
+                      side: BorderSide(
+                        color: Color.fromRGBO(225, 232, 243, 1),
+                        width: 1.5,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       )),
                 ),
+              ),
+              SizedBox(
+                height: 30.0,
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -84,7 +99,7 @@ class _LoginUIState extends State<LoginUI> {
                     horizontal: 15.0,
                   ),
                   filled: true,
-                  fillColor: Colors.grey[205],
+                  fillColor: Color.fromRGBO(226, 226, 226, 1),
                 ),
               ),
               SizedBox(
@@ -103,7 +118,7 @@ class _LoginUIState extends State<LoginUI> {
                     horizontal: 15.0,
                   ),
                   filled: true,
-                  fillColor: Colors.grey[205],
+                  fillColor: Color.fromRGBO(226, 226, 226, 1),
                   suffixIcon: Icon(
                     Icons.visibility_off_rounded,
                   ),
@@ -243,6 +258,7 @@ class _LoginUIState extends State<LoginUI> {
                 ],
               ),
             ],
+            ),
           ),
         ),
       ),
